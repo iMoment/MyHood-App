@@ -19,6 +19,7 @@ class PostCell: UITableViewCell {
     }
     
     func configureCell(post: Post) {
-        
+        titleLabel.text = post.title
+        descriptionLabel.text = post.postDescription
     }
 }
