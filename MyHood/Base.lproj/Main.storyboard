@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-Fm-hlA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-Fm-hlA">
                                 <rect key="frame" x="20" y="90" width="560" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="6fF-K6-hZ8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="88" id="6fF-K6-hZ8" customClass="PostCell" customModule="MyHood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="6fF-K6-hZ8" id="1lZ-uC-vVi">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ExampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="uRv-17-xnx">
@@ -67,6 +67,11 @@
                                                 <constraint firstItem="uRv-17-xnx" firstAttribute="top" secondItem="1lZ-uC-vVi" secondAttribute="topMargin" id="zg2-ih-3Qi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="YBf-hs-c5a" id="4nj-uu-iPC"/>
+                                            <outlet property="postImage" destination="uRv-17-xnx" id="kLG-oL-8Ep"/>
+                                            <outlet property="titleLabel" destination="dFI-iZ-OgE" id="LvU-av-YoY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,6 +131,9 @@
                             <constraint firstAttribute="trailing" secondItem="gUw-kQ-TF0" secondAttribute="trailing" id="efy-f6-wCq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="t2m-Fm-hlA" id="9pQ-0e-zPl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
