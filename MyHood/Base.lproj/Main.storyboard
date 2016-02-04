@@ -173,6 +173,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="nWu-Yk-fk0" eventType="touchUpInside" id="oiC-bp-z4L"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,7 +185,7 @@
                                     <constraint firstAttribute="bottom" secondItem="erC-O5-lFR" secondAttribute="bottom" constant="8" id="eBJ-4W-rUG"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-dp-GZN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-dp-GZN">
                                 <rect key="frame" x="180" y="108" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="MwE-s6-qRp"/>
@@ -195,6 +198,9 @@
                                 <state key="normal" title="+ Add Pic">
                                     <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPictureButtonPressed:" destination="nWu-Yk-fk0" eventType="touchUpInside" id="r9S-Uf-dXF"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSy-IA-ANU">
                                 <rect key="frame" x="20" y="378" width="560" height="30"/>
@@ -214,8 +220,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91D-df-nrX">
-                                <rect key="frame" x="188" y="488" width="225" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91D-df-nrX">
+                                <rect key="frame" x="20" y="488" width="560" height="41"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.52941176469999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="XLG-9f-1In"/>
@@ -225,6 +231,15 @@
                                 <state key="normal" title="Make Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XLG-9f-1In"/>
+                                        <exclude reference="boG-xv-1uP"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="makePostButtonPressed:" destination="nWu-Yk-fk0" eventType="touchUpInside" id="o3L-jN-K9I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,9 +250,12 @@
                             <constraint firstItem="SJc-qP-C2Z" firstAttribute="height" secondItem="VtO-dp-GZN" secondAttribute="height" id="BdF-D2-T2q"/>
                             <constraint firstItem="ncP-eM-dH3" firstAttribute="trailing" secondItem="HxJ-jL-tFU" secondAttribute="trailingMargin" id="E8u-Nb-bpk"/>
                             <constraint firstItem="VtO-dp-GZN" firstAttribute="top" secondItem="Vu9-MW-bxc" secondAttribute="bottom" constant="40" id="FyJ-jP-HhY"/>
+                            <constraint firstItem="91D-df-nrX" firstAttribute="centerX" secondItem="HxJ-jL-tFU" secondAttribute="centerX" id="H2I-Rl-eDH"/>
+                            <constraint firstItem="91D-df-nrX" firstAttribute="trailing" secondItem="HxJ-jL-tFU" secondAttribute="trailingMargin" id="Ubg-Vv-Ege"/>
                             <constraint firstAttribute="trailing" secondItem="Vu9-MW-bxc" secondAttribute="trailing" id="cqn-pX-OjI"/>
                             <constraint firstItem="Vu9-MW-bxc" firstAttribute="leading" secondItem="HxJ-jL-tFU" secondAttribute="leading" id="fSs-wI-JMO"/>
                             <constraint firstItem="Vu9-MW-bxc" firstAttribute="top" secondItem="HxJ-jL-tFU" secondAttribute="top" id="j1B-9h-d97"/>
+                            <constraint firstItem="91D-df-nrX" firstAttribute="leading" secondItem="HxJ-jL-tFU" secondAttribute="leadingMargin" id="l8U-NY-l5x"/>
                             <constraint firstItem="zSy-IA-ANU" firstAttribute="trailing" secondItem="HxJ-jL-tFU" secondAttribute="trailingMargin" id="ld7-pe-vTf"/>
                             <constraint firstItem="VtO-dp-GZN" firstAttribute="centerX" secondItem="HxJ-jL-tFU" secondAttribute="centerX" id="oQS-Ag-F3s"/>
                             <constraint firstItem="zSy-IA-ANU" firstAttribute="leading" secondItem="HxJ-jL-tFU" secondAttribute="leadingMargin" id="oRy-EY-xNG"/>
@@ -247,6 +265,11 @@
                             <constraint firstItem="ncP-eM-dH3" firstAttribute="top" secondItem="zSy-IA-ANU" secondAttribute="bottom" constant="25" id="wzB-fm-QrV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionField" destination="ncP-eM-dH3" id="HxA-rk-FPH"/>
+                        <outlet property="postImage" destination="VtO-dp-GZN" id="vJ0-z6-FZt"/>
+                        <outlet property="titleField" destination="zSy-IA-ANU" id="9Xm-2g-Dnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6j-J0-Hwm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
