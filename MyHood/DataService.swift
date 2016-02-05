@@ -22,6 +22,7 @@ class DataService {
     func savePosts() {
         let postsData = NSKeyedArchiver.archivedDataWithRootObject(_loadedPosts)
         NSUserDefaults.standardUserDefaults().setObject(postsData, forKey: KEY_POSTS)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func loadPosts() {
@@ -41,8 +42,10 @@ class DataService {
         return imgPath
     }
     
-    func imageForPath(path: String) {
-        
+    func imageForPath(path: String) -> UIImage? {
+        let fullPath = documentsPathForFileName(path)
+        let img = UIImage(named: fullPath)
+        return img
     }
     
     func addPost(post: Post) {
