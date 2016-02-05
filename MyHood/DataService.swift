@@ -33,8 +33,12 @@ class DataService {
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "postsLoaded", object: nil))
     }
     
-    func saveImageAndCreatePath(image: UIImage) {
-        
+    func saveImageAndCreatePath(image: UIImage) -> String {
+        let imgData = UIImagePNGRepresentation(image)
+        let imgPath = "image\(NSDate.timeIntervalSinceReferenceDate())"
+        let fullPath = documentsPathForFileName(imgPath)
+        imgData?.writeToFile(fullPath, atomically: true)
+        return imgPath
     }
     
     func imageForPath(path: String) {
@@ -45,5 +49,11 @@ class DataService {
         _loadedPosts.append(post)
         savePosts()
         loadPosts()
+    }
+    
+    func documentsPathForFileName(name: String) -> String {
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let fullPath = path[0] as NSString
+        return fullPath.stringByAppendingPathComponent(name)
     }
 }
